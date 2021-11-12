@@ -1,6 +1,19 @@
+import Button from '../styles/Button'
+import { HeaderContainer, HeaderContent, HeaderTitle } from  '../styles/Header'
+
 const Header = () => {
     return (
-        <h1>Header</h1>
+        <HeaderContainer>
+            <HeaderTitle>
+                bookmarkd
+            </HeaderTitle>
+            <HeaderContent>
+                Hi User!
+                <Button>
+                    Sign Out
+                </Button>
+            </HeaderContent>
+        </HeaderContainer>
     )
 }
 
