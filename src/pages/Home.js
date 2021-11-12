@@ -1,10 +1,19 @@
 import Header from "../components/Header"
+import PublicBookmarks from "../components/PublicBookmarks"
+import UserBookmarks from "../components/UserBookmarks"
+import { HorizontalFlexBox } from "../styles/Boxes"
+import { VerticalDivider } from "../styles/Divider"
 
 const Home = () => {
     return (
-        <div>
+        <>
             <Header />
-        </div>
+            <HorizontalFlexBox>
+                <UserBookmarks />
+                <VerticalDivider height='200px'/>
+                <PublicBookmarks />
+            </HorizontalFlexBox>
+        </>
     )
 }
 

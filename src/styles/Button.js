@@ -8,4 +8,5 @@ export default styled.button`
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    padding: 5px;
 `

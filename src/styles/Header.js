@@ -5,8 +5,8 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 150px;
-    margin-top: 50px;
+    height: 200px;
+    margin-top: 20px;
     color: ${colors.dark};
 `
 
