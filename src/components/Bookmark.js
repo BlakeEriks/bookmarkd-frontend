@@ -1,6 +1,10 @@
-const Bookmark = () => {
+import { Text } from "../styles/Text"
+
+const Bookmark = ({website, url}) => {
     return (
-        <h1>Bookmark</h1>
+        <Text>
+            {website}
+        </Text>
     )
 }
 
