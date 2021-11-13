@@ -1,4 +1,4 @@
-import Button from '../styles/Button'
+import { Button } from '../styles/Button'
 import { HeaderContainer, HeaderContent, HeaderTitle } from  '../styles/Header'
 
 const Header = () => {

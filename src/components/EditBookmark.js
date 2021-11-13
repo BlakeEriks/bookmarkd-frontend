@@ -1,5 +1,5 @@
 import { HorizontalFlexBox, VerticalFlexBox } from "../styles/Boxes"
-import Button from "../styles/Button"
+import { Button, EditAddButton } from "../styles/Button"
 import { PlusIcon } from "../styles/Icons"
 import { Input } from "../styles/Input"
 
@@ -10,9 +10,9 @@ const EditBookmark = () => {
                 <Input placeholder='Website'/>
                 <Input placeholder='Link' />
             </VerticalFlexBox>
-            <Button>
+            <EditAddButton>
                 <PlusIcon />
-            </Button>
+            </EditAddButton>
         </HorizontalFlexBox>
     )
 }
