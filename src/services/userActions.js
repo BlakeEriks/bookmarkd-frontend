@@ -5,9 +5,10 @@ const useUserActions = () => {
     
     const http = useHttp()
     const [auth, setAuth] = useAuthState()
+    const API_BASE_URL = process.env.REACT_APP_API_URL
     
     const login = ({ username, password }) => {
-        return http.post('http://localhost:3000/authenticate', {username, password})
+        return http.post(`${API_BASE_URL}/authenticate`, {username, password})
             .then( user => {
                 localStorage.setItem('user', JSON.stringify(user));
                 setAuth(user)
@@ -15,7 +16,7 @@ const useUserActions = () => {
     }
 
     const register = ({ username, password }) => {
-        return http.post('http://localhost:3000/register', { username, password })
+        return http.post(`${API_BASE_URL}/register`, { username, password })
             .then( user => {
                 localStorage.setItem('user', JSON.stringify(user));
                 setAuth(user)
@@ -23,7 +24,7 @@ const useUserActions = () => {
     }
 
     const logout = () => {
-        http.get('http://localhost:3000/logout')
+        http.get(`${API_BASE_URL}/logout`)
         localStorage.removeItem('user');
         setAuth(null)
     }
