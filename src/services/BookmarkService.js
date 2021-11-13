@@ -1,25 +1,25 @@
-import http from '../http-common'
+import http from '../http'
 
 const BookmarkService = {
 
     getAll: () => {
-        http.get('/bookmarks')
+        return http.get('/bookmarks')
     },
 
     get: id => {
-        http.get(`/bookmarks/${id}`)
+        return http.get(`/bookmarks/${id}`)
     },
 
     create: user => {
-        http.post('/bookmarks', user)
+        return http.post('/bookmarks', user)
     },
 
     update: (id, user) => {
-        http.put(`/bookmarks/${id}`, user)
+        return http.put(`/bookmarks/${id}`, user)
     },
 
     delete: id => {
-        http.delete(`/bookmarks/${id}`)
+        return http.delete(`/bookmarks/${id}`)
     }
 
 }
