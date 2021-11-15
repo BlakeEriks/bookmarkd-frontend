@@ -9,10 +9,10 @@ const PublicBookmarks = () => {
                 Explore
             </SubTitle>
             <ul>
-                <Bookmark website={'Google'} />
-                <Bookmark website={'Facebook'} />
-                <Bookmark website={'Amazon'} />
-                <Bookmark website={'MDN'} />
+                <Bookmark name={'Google'} />
+                <Bookmark name={'Facebook'} />
+                <Bookmark name={'Amazon'} />
+                <Bookmark name={'MDN'} />
             </ul>
         </VerticalFlexBox>
     )
