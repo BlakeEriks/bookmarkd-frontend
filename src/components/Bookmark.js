@@ -1,9 +1,11 @@
 import { Text } from "../styles/Text"
 
-const Bookmark = ({website, url}) => {
+const Bookmark = ({name, url}) => {
     return (
         <Text>
-            {website}
+            <a href={'https://' + url} target='_blank'>
+                {name}
+            </a>    
         </Text>
     )
 }
