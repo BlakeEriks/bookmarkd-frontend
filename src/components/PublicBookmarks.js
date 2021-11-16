@@ -2,6 +2,7 @@ import { VerticalFlexBox } from "../styles/Boxes"
 import React, {useEffect, useState} from "react";
 import useBookmarks from "../services/bookmarks";
 import BookmarkExplore from "./BookmarkExplore";
+import { SubTitle } from "../styles/Text";
 
 const PublicBookmarks = () => {
 
@@ -20,12 +21,13 @@ const PublicBookmarks = () => {
         await bookmarkService.create(bookmark)
         getBookmarks()
     }
-
     
     return (
         <main>
             <VerticalFlexBox width='40%' alignItems='center'>
-                <h2>Explore</h2>
+                <SubTitle>
+                    Explore
+                </SubTitle>
                 {bookmarks.map( bookmark => 
                     <BookmarkExplore key={bookmark._id} {...bookmark} createBookmark={createBookmark} />
                 )}
