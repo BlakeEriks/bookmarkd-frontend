@@ -1,51 +1,47 @@
 import { VerticalFlexBox } from "../styles/Boxes"
 import { SubTitle } from "../styles/Text"
 import Bookmark from "./Bookmark"
-//importing the useState
-import React, {useState, useRef} from "react";
+import React, {useEffect, useState} from "react";
+import { Route, Switch } from "react-router-dom";
 
 
-export default function App() {
-    // declare state to hold bookmarks
-    const [publicBookmarks, setPublicBookmarks] = useState([{ website:"default"}])
-    // declare state for the form data
-    const [form, setForm] = useState({website:""})
-    // declare state to track form validity
-    const [valid, setValid] = useState(false)
-    // a ref to refer to form
-    const formRef = useRef(null)
-    
-    // add bookmarks to bookmark when form is submitted
-    function addBookmarks(event){
-        console.log(formRef);
-        // dont add bookmark item if form is not valid
-        if (formRef.current.checkValidity()) {
-            // prevent refresh
-            event.preventDefault();
-            // copy the state
-            const newState = [...publicBookmarks];
-            newState.push({website: formRef.current[0].value})
-            // update the state
-            setPublicBookmarks(newState);
-        
+function PublicBookmarks(props){
+    const [bookmarks, setBookmarks] = useState(null);
+
+    const URL = "https://jab-bookmarkd-backend.herokuapp.com/bookmarks"
+
+    const getBookmarks = async () => {
+        const response = await fetch(URL);
+        const data = await response.json();
+        setBookmarks(data);
     }
+
+    const createBookmarks = async (bookmarks) => {
+    // make post request to create bookmarks
+    await fetch(URL, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bookmarks),
+    });
+    // update list of bookmarks
+    getBookmarks();
+  };
+
+    useEffect(() => getBookmarks(), []);
+
 }
-    function handleChange(event) {
-        //set validity
-        setValid(formRef.current.checkValidity())
-        // make a copy of the current state
-        const newState = { ...form };
-        // update the new object
-        newState[event.target.name] = event.target.value;
-        // update the state
-        setForm(newState);
-    }
 
 return (
-    <VerticalFlexBox width='40%' alignItems='center'>
+    <main>
+        <Switch>
+            <VerticalFlexBox width='40%' alignItems='center'>
             <h2>Explore</h2>
             <hr />
-
+            <Route exact path="/">
+                <Index bookmarks={bookmarks} createBookmarks={createBookmarks} />
+            </Route>
             <ul>
                 <Bookmark website={'Google'} />
                 <Bookmark website={'Facebook'} />
@@ -54,19 +50,12 @@ return (
             </ul>
             
             <hr />
-            <form onSubmit={addPublicBookmarks} ref={formRef}>
-                <label>
-                    <span>Bookmarks</span>
-                    <input
-                    name="Bookmark"
-                    value={form.publicBookmarks}
-                    onChange={handleChange}
-                    />
-                </label>
-            <button disabled={!valid}>ADD</button>
-            </form>
-    </VerticalFlexBox>
+            <button onClick={createBookmarks} id="add">
+                ADD
+            </button>    
+            </VerticalFlexBox>
+        </Switch>
+    </main>
     )
-}
 
-export default PublicBookmarks
+export default PublicBookmarks;
