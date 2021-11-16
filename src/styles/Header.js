@@ -18,5 +18,4 @@ export const HeaderContent = styled.div`
     display: flex;
     justify-content: space-around;
     font-size: ${fontSizes.medium};
-    width: 35%;
 `
