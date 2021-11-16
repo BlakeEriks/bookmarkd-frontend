@@ -1,21 +1,38 @@
 import { VerticalFlexBox } from "../styles/Boxes"
-import { SubTitle } from "../styles/Text"
-import Bookmark from "./Bookmark"
+import React, {useEffect, useState} from "react";
+import useBookmarks from "../services/bookmarks";
+import BookmarkExplore from "./BookmarkExplore";
 
 const PublicBookmarks = () => {
-    return (
-        <VerticalFlexBox width='40%' alignItems='center'>
-            <SubTitle>
-                Explore
-            </SubTitle>
-            <ul>
-                <Bookmark name={'Google'} />
-                <Bookmark name={'Facebook'} />
-                <Bookmark name={'Amazon'} />
-                <Bookmark name={'MDN'} />
-            </ul>
-        </VerticalFlexBox>
-    )
-}
 
-export default PublicBookmarks
+    const [bookmarks, setBookmarks] = useState([]);
+
+    const bookmarkService = useBookmarks()
+    
+    const getBookmarks = async () => {
+        const response = await bookmarkService.explore()
+        setBookmarks(response)
+    }
+
+    useEffect(() => getBookmarks(), [])
+    
+    const createBookmark = async bookmark => {
+        await bookmarkService.create(bookmark)
+        getBookmarks()
+    }
+
+    
+    return (
+        <main>
+            <VerticalFlexBox width='40%' alignItems='center'>
+                <h2>Explore</h2>
+                {bookmarks.map( bookmark => 
+                    <BookmarkExplore key={bookmark._id} {...bookmark} createBookmark={createBookmark} />
+                )}
+            </VerticalFlexBox>
+        </main>
+    )
+
+};
+
+export default PublicBookmarks;
