@@ -25,8 +25,8 @@ const useBookmarks = () => {
         return http.put(`${API_BASE_URL}/bookmarks/${bookmark._id}`, bookmark)
     }
 
-    const remove = bookmark => {
-        return http.delete(`${API_BASE_URL}/bookmarks/${bookmark._id}`)
+    const remove = id => {
+        return http.delete(`${API_BASE_URL}/bookmarks/${id}`)
     }
 
     return {
