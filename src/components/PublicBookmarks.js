@@ -1,61 +1,38 @@
 import { VerticalFlexBox } from "../styles/Boxes"
-import { SubTitle } from "../styles/Text"
-import Bookmark from "./Bookmark"
 import React, {useEffect, useState} from "react";
-import { Route, Switch } from "react-router-dom";
+import useBookmarks from "../services/bookmarks";
+import BookmarkExplore from "./BookmarkExplore";
 
+const PublicBookmarks = () => {
 
-function PublicBookmarks(props){
-    const [bookmarks, setBookmarks] = useState(null);
+    const [bookmarks, setBookmarks] = useState([]);
 
-    const URL = "https://jab-bookmarkd-backend.herokuapp.com/bookmarks"
-
+    const bookmarkService = useBookmarks()
+    
     const getBookmarks = async () => {
-        const response = await fetch(URL);
-        const data = await response.json();
-        setBookmarks(data);
+        const response = await bookmarkService.explore()
+        setBookmarks(response)
     }
 
-    const createBookmarks = async (bookmarks) => {
-    // make post request to create bookmarks
-    await fetch(URL, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(bookmarks),
-    });
-    // update list of bookmarks
-    getBookmarks();
-  };
+    useEffect(() => getBookmarks(), [])
+    
+    const createBookmark = async bookmark => {
+        await bookmarkService.create(bookmark)
+        getBookmarks()
+    }
 
-    useEffect(() => getBookmarks(), []);
-
-}
-
-return (
-    <main>
-        <Switch>
+    
+    return (
+        <main>
             <VerticalFlexBox width='40%' alignItems='center'>
-            <h2>Explore</h2>
-            <hr />
-            <Route exact path="/">
-                <Index bookmarks={bookmarks} createBookmarks={createBookmarks} />
-            </Route>
-            <ul>
-                <Bookmark website={'Google'} />
-                <Bookmark website={'Facebook'} />
-                <Bookmark website={'Amazon'} />
-                <Bookmark website={'MDN'} />
-            </ul>
-            
-            <hr />
-            <button onClick={createBookmarks} id="add">
-                ADD
-            </button>    
+                <h2>Explore</h2>
+                {bookmarks.map( bookmark => 
+                    <BookmarkExplore key={bookmark._id} {...bookmark} createBookmark={createBookmark} />
+                )}
             </VerticalFlexBox>
-        </Switch>
-    </main>
+        </main>
     )
+
+};
 
 export default PublicBookmarks;
