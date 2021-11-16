@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { colors, fontSizes } from "./Config";
 
 export const Button = styled.button`
-    font-size: ${fontSizes.small};
+    font-size: ${props => fontSizes[props.fontSize] || fontSizes.small};
     color: ${colors.light};
     background: ${colors.dark};
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 5px;
-    width: 130px
+    padding: ${props => props.padding || '5px'};
+    width: ${props => props.width || '130px'}
 `
 
 export const EditAddButton = styled(Button)`
