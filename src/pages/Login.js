@@ -5,12 +5,11 @@ import { useAuthState } from "../state/Auth"
 import '../App.css';
 
 
-import { SubTitle, Text } from "../styles/Text"
-import {Input} from "../styles/Input"
-import { HeaderContainer, HeaderTitle, HeaderContent } from "../styles/Header"
-import {VerticalDivider, HorizontalDivider} from "../styles/Divider"
-import {Button, WhiteButton} from "../styles/Button"
-import { HorizontalFlexBox, VerticalFlexBox } from "../styles/Boxes"
+import { SubTitle } from "../styles/Text"
+import { LoginInput } from "../styles/Input"
+import { HorizontalDivider} from "../styles/Divider"
+import { WhiteButton } from "../styles/Button"
+import { VerticalFlexBox } from "../styles/Boxes"
 
 
 const Login = () => {
@@ -46,11 +45,11 @@ const Login = () => {
                     <HorizontalDivider />
 
                     <div className="container">
-                        <Input  type="text" name="username" value={form.username} onChange={onChange} placeholder="username" required></Input>
+                        <LoginInput  type="text" name="username" value={form.username} onChange={onChange} placeholder="username" required></LoginInput>
                     </div>
 
                     <div className="container">
-                        <Input type="password" name="password" value={form.password} onChange={onChange} placeholder="password" required></Input>
+                        <LoginInput type="password" name="password" value={form.password} onChange={onChange} placeholder="password" required></LoginInput>
                     </div>
 
                     <HorizontalDivider />

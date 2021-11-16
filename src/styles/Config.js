@@ -13,9 +13,3 @@ export const fontSizes = {
     xLarge: '72px'
 }
 
-export const loginColors = {
-    light: '#F1F1F1',
-    dark: '#01448A',
-    accent: '#999999',
-    highlight: '#A29045'
-}
