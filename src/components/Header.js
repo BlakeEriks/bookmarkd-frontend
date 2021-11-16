@@ -15,7 +15,7 @@ const Header = () => {
             </HeaderTitle>
             <HeaderContent>
                 Hi {auth.username}!
-                <Button onClick={userActions.logout}>
+                <Button width='110px' onClick={userActions.logout}>
                     Sign Out
                 </Button>
             </HeaderContent>
