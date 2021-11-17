@@ -5,18 +5,20 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 200px;
-    margin-top: 20px;
     color: ${colors.dark};
+    width: 100%;
+    margin-bottom: 40px;
 `
 
 export const HeaderTitle = styled.div`
+    font-family: 'Playfair Display', serif;
     font-size: ${fontSizes.xLarge};
+    font-weight: bold;
 `
 
 export const HeaderContent = styled.div`
+    font-family: 'Playfair Display', serif;
     display: flex;
     justify-content: space-around;
     font-size: ${fontSizes.medium};
-    width: 35%;
 `

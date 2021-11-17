@@ -6,3 +6,9 @@ export const VerticalDivider = styled.div`
     height: ${props => props.height || '90%'};
     margin: auto 0;
 `
+
+export const HorizontalDivider = styled.hr`
+    color: rgba(0, 0, 0, 0.65);
+    margin-left: -100px;
+    font-weight: bold;
+`;

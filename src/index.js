@@ -4,14 +4,19 @@ import './index.css';
 import App from './App';
 import { RecoilRoot } from 'recoil';
 import { BrowserRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient()
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <RecoilRoot>
-          <App />
-      </RecoilRoot>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <QueryClientProvider client={queryClient} >
+    <React.StrictMode>
+      <BrowserRouter>
+        <RecoilRoot>
+            <App />
+        </RecoilRoot>
+      </BrowserRouter>
+    </React.StrictMode>
+  </QueryClientProvider>,
   document.getElementById('root')
 );
