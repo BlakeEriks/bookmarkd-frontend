@@ -1,7 +1,7 @@
 import { HorizontalFlexBox } from "../styles/Boxes"
 import { Button } from "../styles/Button"
 import { EditIcon, TimesIcon } from "../styles/Icons"
-import { LinkText, Text } from "../styles/Text"
+import { LinkText } from "../styles/Text"
 
 const Bookmark = ({_id, name, url, removeBookmark, setForm}) => {
     return (

@@ -1,5 +1,5 @@
 import { HorizontalFlexBox } from "../styles/Boxes"
-import { FooterText, Text } from "../styles/Text"
+import { FooterText } from "../styles/Text"
 
 const Footer = () => {
     return (

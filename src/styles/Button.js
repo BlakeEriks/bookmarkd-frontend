@@ -65,4 +65,5 @@ export const WhiteButton = styled.button`
     padding: 0px;
     width: 130px;
     height: 25px;
+    text-decoration: none;
 `
