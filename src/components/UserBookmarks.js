@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import useBookmarks from "../services/bookmarks"
 import { useAuthState } from "../state/Auth"
-import { VerticalFlexBox } from "../styles/Boxes"
+import { BookmarkList, VerticalFlexBox } from "../styles/Boxes"
 import Bookmark from "./Bookmark"
 import EditBookmark from "./EditBookmark"
 import SearchBar from "./SearchBar"
@@ -47,10 +47,10 @@ const UserBookmarks = () => {
     return (
         <VerticalFlexBox width='60%'>
             <SearchBar setFilter={setFilter} filter={filter}/>
-            <ul style={{width: '50%'}}>
-                {getFilteredBookmarks().map( bookmark => <Bookmark key={bookmark._id} {...bookmark} removeBookmark={removeBookmark} setForm={setFormData} />)}
-            </ul>
-            <EditBookmark  formData={formData} createBookmark={createBookmark} nameExists={nameExists}/>
+                <BookmarkList>
+                    {getFilteredBookmarks().map( bookmark => <Bookmark key={bookmark._id} {...bookmark} removeBookmark={removeBookmark} setForm={setFormData} />)}
+                </BookmarkList>
+            <EditBookmark formData={formData} createBookmark={createBookmark} nameExists={nameExists}/>
         </VerticalFlexBox>
     )
 }

@@ -10,10 +10,10 @@ const Bookmark = ({_id, name, url, removeBookmark, setForm}) => {
                 <Text>{name}</Text>
             </a>
             <HorizontalFlexBox>
-                <Button width='30px' padding='none' onClick={() => removeBookmark(_id)}>
+                <Button width='30px' onClick={() => removeBookmark(_id)}>
                     <TimesIcon />
                 </Button>
-                <Button width='30px' padding='none' onClick={() => setForm({name, url})}>
+                <Button width='30px' onClick={() => setForm({name, url})}>
                     <EditIcon />
                 </Button>
             </HorizontalFlexBox>

@@ -24,7 +24,7 @@ const Home = () => {
         !auth ? <Navigate to='/login' /> :
         <>
             <Header />
-            <HorizontalFlexBox>
+            <HorizontalFlexBox alignItems='flex-start'>
                 <UserBookmarks />
                 <VerticalDivider height='200px'/>
                 <PublicBookmarks />

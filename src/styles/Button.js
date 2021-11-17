@@ -3,14 +3,25 @@ import { colors, fontSizes } from "./Config";
 
 export const Button = styled.button`
     font-family: 'Playfair Display', serif;
-    font-size: ${props => fontSizes[props.fontSize] || fontSizes.small};
     color: ${colors.light};
-    background: ${colors.dark};
+    background: ${colors.light};
     border: none;
     border-radius: 5px;
     cursor: pointer;
     padding: ${props => props.padding || '5px'};
-    width: ${props => props.width || '130px'}
+    width: ${props => props.width || 'auto'};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background: ${colors.light};
+        color: ${colors.dark};
+    }
+
+    &:hover * {
+        color: ${colors.dark};
+    }
 `
 
 export const EditAddButton = styled(Button)`

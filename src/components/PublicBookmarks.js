@@ -24,17 +24,14 @@ const PublicBookmarks = () => {
     }
 
     return (
-        <main>
-            <VerticalFlexBox width='40%' alignItems='center'>
-                <SubTitle>
-                    Explore
-                </SubTitle>
-                {bookmarks.map( bookmark =>
-                    <BookmarkExplore key={bookmark._id} {...bookmark} createBookmark={createBookmark} />
-                )}
-                </div>
-            </VerticalFlexBox>
-        </main>
+        <VerticalFlexBox width='40%' alignItems='center'>
+            <SubTitle>
+                Explore
+            </SubTitle>
+            {bookmarks.map( bookmark =>
+                <BookmarkExplore key={bookmark._id} {...bookmark} createBookmark={createBookmark} />
+            )}
+        </VerticalFlexBox>
     )
 
 };

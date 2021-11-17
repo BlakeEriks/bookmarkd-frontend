@@ -14,10 +14,3 @@ export const Text = styled.li`
     color: ${props => props.color || colors.dark};
     font-size: ${props => props.fontSize || fontSizes.small};
 `
-
-export const PublicText = styled.h1`
-    font-family: 'Playfair Display', serif;
-    color: ${props => props.color || colors.dark};
-    font-size: ${props => props.fontSize || fontSizes.small};
-    font-weight: 500;
-`

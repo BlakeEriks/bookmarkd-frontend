@@ -1,13 +1,16 @@
+import { HorizontalFlexBox } from "../styles/Boxes"
 import { Button } from "../styles/Button"
-import { PublicText } from "../styles/Text"
+import { PlusIcon } from "../styles/Icons"
+import { Text } from "../styles/Text"
 
 const BookmarkExplore = ({name, url, createBookmark}) => {
     return (
-        <>
-            <PublicText>{name}</PublicText>
+        <HorizontalFlexBox width='80%'>
+            <Text>{name}</Text>
             <Button onClick={() => createBookmark({name})}>
-            ADD</Button>
-        </>
+                <PlusIcon fontSize='20px'/>
+            </Button>
+        </HorizontalFlexBox>
     )
 }
 

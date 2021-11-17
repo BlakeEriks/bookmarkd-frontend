@@ -1,6 +1,6 @@
 import { Check, Edit, Plus, Search, Times } from "@styled-icons/fa-solid";
 import styled from "styled-components";
-import { colors } from "./Config";
+import { colors, fontSizes } from "./Config";
 
 export const SearchIcon = styled(Search)`
     color: ${colors.light};
@@ -11,15 +11,15 @@ export const SearchIcon = styled(Search)`
 
 export const PlusIcon = styled(Plus)`
     color: ${colors.light};
-    width: 32px;
-    height: 32px;
+    width: ${props => props.fontSize || '32px'};
+    height: ${props => props.fontSize || '32px'};
     transition: color 0.3s ease-in-out;
 `
 
 export const CheckIcon = styled(Check)`
     color: ${colors.light};
-    width: 32px;
-    height: 32px;
+    width: ${props => props.fontSize || '32px'};
+    height: ${props => props.fontSize || '32px'};
     transition: color 0.3s ease-in-out;
 `
 
