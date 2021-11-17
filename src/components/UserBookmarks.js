@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { useQuery, useQueryClient } from "react-query"
 import useBookmarks from "../services/bookmarks"
-import { useAuthState } from "../state/Auth"
 import { BookmarkList, VerticalFlexBox } from "../styles/Boxes"
 import Bookmark from "./Bookmark"
 import EditBookmark from "./EditBookmark"
@@ -8,41 +8,28 @@ import SearchBar from "./SearchBar"
 
 const UserBookmarks = () => {
 
+    const queryClient = useQueryClient()
     const bookmarkService = useBookmarks()
-    const [bookmarks, setBookmarks] = useState([])
     const [formData, setFormData] = useState({name: '', url: ''})
     const [filter, setFilter] = useState('')
 
-    const getBookmarks = () => {
-        bookmarkService.get().then(res => {
-            setBookmarks(res)
-        })
-    }
-
-    useEffect( () => {
-        getBookmarks()
-    }, [])
+    const bookmarkQuery = useQuery('bookmarks', bookmarkService.get) 
 
     const createBookmark = bookmark => {
         bookmarkService.create(bookmark)
-            .then( () => {
-                getBookmarks()
-            })
+            .then( () => queryClient.invalidateQueries() )
     }
 
     const removeBookmark = id => {
         bookmarkService.remove(id)
-            .then( res => {
-                console.log(res)
-                setBookmarks([...bookmarks.filter(bookmark => bookmark._id !== id)])
-            })
+            .then( () => queryClient.invalidateQueries() )
     }
 
     const getFilteredBookmarks = () => {
-        return bookmarks.filter(bookmark => bookmark.name.toLowerCase().includes(filter.toLowerCase()))
+        return bookmarkQuery.data?.filter(bookmark => bookmark.name.toLowerCase().includes(filter.toLowerCase()))
     }
 
-    const nameExists = name => bookmarks.some(bookmark => bookmark.name === name)
+    const nameExists = name => bookmarkQuery.data?.some(bookmark => bookmark.name === name)
 
     return (
         <VerticalFlexBox width='60%'>

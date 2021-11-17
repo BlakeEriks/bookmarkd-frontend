@@ -1,26 +1,23 @@
 import { VerticalFlexBox } from "../styles/Boxes"
-import React, {useEffect, useState} from "react";
+import React from "react";
 import useBookmarks from "../services/bookmarks";
 import BookmarkExplore from "./BookmarkExplore";
 import { SubTitle } from "../styles/Text";
+import { useQuery, useQueryClient } from "react-query";
 
 
 const PublicBookmarks = () => {
 
-    const [bookmarks, setBookmarks] = useState([]);
-
+    const queryClient = useQueryClient()
     const bookmarkService = useBookmarks()
-
-    const getBookmarks = async () => {
-        const response = await bookmarkService.explore()
-        setBookmarks(response)
-    }
-
-    useEffect(() => getBookmarks(), [])
-
+    
+    const exploreQuery = useQuery('bookmarks/explore' ,bookmarkService.explore)
+    
     const createBookmark = async bookmark => {
-        await bookmarkService.create(bookmark)
-        getBookmarks()
+        bookmarkService.create(bookmark)
+            .then( () => {
+                queryClient.invalidateQueries()
+            })
     }
 
     return (
@@ -28,7 +25,7 @@ const PublicBookmarks = () => {
             <SubTitle>
                 Explore
             </SubTitle>
-            {bookmarks.map( bookmark =>
+            {exploreQuery.data?.map( bookmark => 
                 <BookmarkExplore key={bookmark._id} {...bookmark} createBookmark={createBookmark} />
             )}
         </VerticalFlexBox>
