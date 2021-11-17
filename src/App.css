@@ -12,3 +12,8 @@
   flex-direction: column;
 
 }
+
+
+.niceText {
+  font-family: 'Playfair Display', serif;
+}

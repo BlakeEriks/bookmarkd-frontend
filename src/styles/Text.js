@@ -5,7 +5,7 @@ export const SubTitle = styled.div`
     color: ${colors.dark};
     font-size: ${fontSizes.large};
     font-weight: bold;
-    text-align: center
+    text-align: center;
 `
 
 export const Text = styled.li`

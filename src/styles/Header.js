@@ -12,6 +12,7 @@ export const HeaderContainer = styled.div`
 
 export const HeaderTitle = styled.div`
     font-size: ${fontSizes.xLarge};
+    font-weight: bold;
 `
 
 export const HeaderContent = styled.div`

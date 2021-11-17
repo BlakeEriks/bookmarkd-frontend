@@ -1,8 +1,8 @@
 const BookmarkExplore = ({name, url, createBookmark}) => {
     return (
         <>
-            <h1>{name}</h1>
-            <button onClick={() => createBookmark({name})}>
+            <h1 className="niceText">{name}</h1>
+            <button className="niceText" onClick={() => createBookmark({name})}>
             ADD
             </button>
         </>

@@ -5,7 +5,7 @@ const SearchBar = () => {
     return (
         <SearchContainer>
             <SearchIcon />
-            <SearchInput placeholder='Search' />
+            <SearchInput  className="niceText" placeholder='Search'  />
         </SearchContainer>
     )
 }

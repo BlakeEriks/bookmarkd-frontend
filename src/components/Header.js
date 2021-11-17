@@ -10,12 +10,12 @@ const Header = () => {
 
     return (
         <HeaderContainer>
-            <HeaderTitle>
+            <HeaderTitle className="niceText">
                 bookmarkd
             </HeaderTitle>
-            <HeaderContent>
+            <HeaderContent className="niceText">
                 Hi {auth.username}!
-                <Button width='110px' onClick={userActions.logout}>
+                <Button className="niceText" width='110px' onClick={userActions.logout}>
                     Sign Out
                 </Button>
             </HeaderContent>

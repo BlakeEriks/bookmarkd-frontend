@@ -9,26 +9,26 @@ const PublicBookmarks = () => {
     const [bookmarks, setBookmarks] = useState([]);
 
     const bookmarkService = useBookmarks()
-    
+
     const getBookmarks = async () => {
         const response = await bookmarkService.explore()
         setBookmarks(response)
     }
 
     useEffect(() => getBookmarks(), [])
-    
+
     const createBookmark = async bookmark => {
         await bookmarkService.create(bookmark)
         getBookmarks()
     }
-    
+
     return (
         <main>
             <VerticalFlexBox width='40%' alignItems='center'>
-                <SubTitle>
+                <SubTitle className="niceText">
                     Explore
                 </SubTitle>
-                {bookmarks.map( bookmark => 
+                {bookmarks.map( bookmark =>
                     <BookmarkExplore key={bookmark._id} {...bookmark} createBookmark={createBookmark} />
                 )}
             </VerticalFlexBox>
