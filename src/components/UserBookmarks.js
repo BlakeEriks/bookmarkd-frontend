@@ -50,7 +50,7 @@ const UserBookmarks = () => {
             <ul style={{width: '50%'}}>
                 {getFilteredBookmarks().map( bookmark => <Bookmark key={bookmark._id} {...bookmark} removeBookmark={removeBookmark} setForm={setFormData} />)}
             </ul>
-            <EditBookmark formData={formData} createBookmark={createBookmark} nameExists={nameExists}/>
+            <EditBookmark  formData={formData} createBookmark={createBookmark} nameExists={nameExists}/>
         </VerticalFlexBox>
     )
 }

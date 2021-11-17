@@ -12,6 +12,7 @@ export const SearchContainer = styled.div`
 `
 
 export const SearchInput = styled.input`
+    font-family: 'Playfair Display', serif;
     background: none;
     color: ${colors.light};
     font-size: ${fontSizes.medium};

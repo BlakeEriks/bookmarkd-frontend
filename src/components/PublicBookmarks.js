@@ -10,14 +10,14 @@ const PublicBookmarks = () => {
     const [bookmarks, setBookmarks] = useState([]);
 
     const bookmarkService = useBookmarks()
-    
+
     const getBookmarks = async () => {
         const response = await bookmarkService.explore()
         setBookmarks(response)
     }
 
     useEffect(() => getBookmarks(), [])
-    
+
     const createBookmark = async bookmark => {
         await bookmarkService.create(bookmark)
         getBookmarks()
@@ -29,8 +29,7 @@ const PublicBookmarks = () => {
                 <SubTitle>
                     Explore
                 </SubTitle>
-                <div className = "bookmark">
-                    {bookmarks.map( bookmark => 
+                {bookmarks.map( bookmark =>
                     <BookmarkExplore key={bookmark._id} {...bookmark} createBookmark={createBookmark} />
                 )}
                 </div>

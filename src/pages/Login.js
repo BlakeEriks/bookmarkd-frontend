@@ -45,7 +45,7 @@ const Login = () => {
                     <HorizontalDivider />
 
                     <div className="container">
-                        <LoginInput  type="text" name="username" value={form.username} onChange={onChange} placeholder="username" required></LoginInput>
+                        <LoginInput type="text" name="username" value={form.username} onChange={onChange} placeholder="username" required></LoginInput>
                     </div>
 
                     <div className="container">

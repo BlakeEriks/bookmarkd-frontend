@@ -41,7 +41,7 @@ const SignUp = () => {
                 <VerticalFlexBox class="container">
 
                     <div class="container">
-                        <SubTitle>Sign Up Here</SubTitle>
+                        <SubTitle font-weight="bold">Sign Up Here</SubTitle>
                     </div>
                     <HorizontalDivider />
 
