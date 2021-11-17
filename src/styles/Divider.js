@@ -10,5 +10,5 @@ export const VerticalDivider = styled.div`
 export const HorizontalDivider = styled.hr`
     color: rgba(0, 0, 0, 0.65);
     margin-left: -100px;
-    font-weght: bold;
+    font-weight: bold;
 `;

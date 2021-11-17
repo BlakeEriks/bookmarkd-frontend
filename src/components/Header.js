@@ -1,23 +1,23 @@
 import useUserActions from '../services/userActions'
 import { useAuthState } from '../state/Auth'
-import { Button } from '../styles/Button'
+import { SignOutButton } from '../styles/Button'
 import { HeaderContainer, HeaderContent, HeaderTitle } from  '../styles/Header'
 
 const Header = () => {
 
     const userActions = useUserActions()
-    const [auth, setAuth] = useAuthState()
+    const [auth] = useAuthState()
 
     return (
         <HeaderContainer>
-            <HeaderTitle>
+            <HeaderTitle className="niceText">
                 bookmarkd
             </HeaderTitle>
-            <HeaderContent>
+            <HeaderContent className="niceText">
                 Hi {auth.username}!
-                <Button width='110px' onClick={userActions.logout}>
+                <SignOutButton className="niceText" width='110px' onClick={userActions.logout}>
                     Sign Out
-                </Button>
+                </SignOutButton>
             </HeaderContent>
         </HeaderContainer>
     )

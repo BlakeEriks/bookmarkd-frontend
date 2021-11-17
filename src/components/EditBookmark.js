@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { HorizontalFlexBox, HorizontalFlexBoxForm, VerticalFlexBox } from "../styles/Boxes"
-import { Button, EditAddButton } from "../styles/Button"
+import { HorizontalFlexBox, VerticalFlexBox } from "../styles/Boxes"
+import { EditAddButton } from "../styles/Button"
 import { CheckIcon, PlusIcon } from "../styles/Icons"
 import { Input } from "../styles/Input"
 
@@ -26,11 +26,11 @@ const EditBookmark = ({formData, createBookmark, nameExists}) => {
         <form onSubmit={handleSubmit}>
             <HorizontalFlexBox>
                 <VerticalFlexBox>
-                    <Input onChange={onChange} value={form.name} name='name' placeholder='Website'/>
-                    <Input onChange={onChange} value={form.url} name='url' placeholder='Link' />
+                    <Input className="niceText" onChange={onChange} value={form.name} name='name' placeholder='Website'/>
+                    <Input className="niceText" onChange={onChange} value={form.url} name='url' placeholder='Link' />
                 </VerticalFlexBox>
-                <EditAddButton width='50px'>
-                    { nameExists(form.name) ? <CheckIcon /> : <PlusIcon />}
+                <EditAddButton>
+                    { nameExists(form.name) ? <CheckIcon fontSize='38px'/> : <PlusIcon fontSize='38px'/>}
                 </EditAddButton>
             </HorizontalFlexBox>
         </form>
