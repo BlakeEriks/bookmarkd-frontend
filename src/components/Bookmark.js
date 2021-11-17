@@ -1,20 +1,20 @@
 import { HorizontalFlexBox } from "../styles/Boxes"
 import { Button } from "../styles/Button"
 import { EditIcon, TimesIcon } from "../styles/Icons"
-import { Text } from "../styles/Text"
+import { LinkText, Text } from "../styles/Text"
 
 const Bookmark = ({_id, name, url, removeBookmark, setForm}) => {
     return (
-        <HorizontalFlexBox style={{marginBottom: '3px'}}>
-            <a href={'https://' + url} target='_blank'>
-                <Text>{name}</Text>
-            </a>
+        <HorizontalFlexBox style={{marginBottom: '3px'}} justifyContent='space-between'>
+            <LinkText href={'https://' + url} target='_blank'>
+                {name}
+            </LinkText>
             <HorizontalFlexBox>
-                <Button width='30px' onClick={() => removeBookmark(_id)}>
-                    <TimesIcon />
-                </Button>
                 <Button width='30px' onClick={() => setForm({name, url})}>
                     <EditIcon />
+                </Button>
+                <Button width='30px' onClick={() => removeBookmark(_id)}>
+                    <TimesIcon />
                 </Button>
             </HorizontalFlexBox>
         </HorizontalFlexBox>

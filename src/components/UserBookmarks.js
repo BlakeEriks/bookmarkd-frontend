@@ -32,10 +32,10 @@ const UserBookmarks = () => {
     const nameExists = name => bookmarkQuery.data?.some(bookmark => bookmark.name === name)
 
     return (
-        <VerticalFlexBox width='60%'>
+        <VerticalFlexBox width='50%'>
             <SearchBar setFilter={setFilter} filter={filter}/>
                 <BookmarkList>
-                    {getFilteredBookmarks().map( bookmark => <Bookmark key={bookmark._id} {...bookmark} removeBookmark={removeBookmark} setForm={setFormData} />)}
+                    {getFilteredBookmarks()?.map( bookmark => <Bookmark key={bookmark._id} {...bookmark} removeBookmark={removeBookmark} setForm={setFormData} />)}
                 </BookmarkList>
             <EditBookmark formData={formData} createBookmark={createBookmark} nameExists={nameExists}/>
         </VerticalFlexBox>
