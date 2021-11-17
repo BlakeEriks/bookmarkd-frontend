@@ -1,10 +1,18 @@
-# Getting Started with Create React App
+# Bookmarkd App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bookmarkd is a an application built to help users track their bookmarks. In addition, users can sign up and log in where data is stored and accesible at any time. Furthermore, users can add or remove their bookmarks from their personal list. 
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+React
+JavaScript
+    -Express
+    -Mongoose
+MongoDB
+HTML
+CSS
+
+## Installation and Setup Instructions
 
 ### `npm start`
 
@@ -39,32 +47,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Reflection
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project was built by three members during our Unit 3 React Lesson. Our project goals included using technologies learned up to this point and practicing our dev skills along with working in a collaborative environment. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This application is built upon :
+-Two object models: User and Bookmark
+-A full CRUD express API for bookmarks 
+-A single-page built with React with ability for users to create and add new bookmarks to their own list 
+-Adding the ability to see all bookmarks and delete bookmarks 
 
-### Code Splitting
+One of the main challenges we had was Authentication. Getting authentication working based off of user permission which asssociated the users to bookmarks.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The technologies implemented in this project are React, React-Router 6.0, VanillaJS, JavaScript, StyledComponents, CSS,Authenitcation, dotenv, Mongoose, Netlify and Heroku.
