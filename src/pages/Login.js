@@ -10,6 +10,7 @@ import { LoginInput } from "../styles/Input"
 import { HorizontalDivider} from "../styles/Divider"
 import { WhiteButton } from "../styles/Button"
 import { VerticalFlexBox } from "../styles/Boxes"
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -61,9 +62,9 @@ const Login = () => {
                     <HorizontalDivider />
 
                     <div className="container">
-                        <form action ="/signup">
+                        <Link to="/signup">
                             <WhiteButton>Sign Up</WhiteButton>
-                        </form>
+                        </Link>
                     </div>
 
 

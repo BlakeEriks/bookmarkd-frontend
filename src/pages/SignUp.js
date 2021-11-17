@@ -5,11 +5,12 @@ import { useAuthState } from "../state/Auth"
 import '../App.css';
 
 
-import { SubTitle } from "../styles/Text"
+import { LinkText, SubTitle } from "../styles/Text"
 import { LoginInput } from "../styles/Input"
 import { HorizontalDivider } from "../styles/Divider"
 import { WhiteButton } from "../styles/Button"
 import { VerticalFlexBox } from "../styles/Boxes"
+import { Link } from "react-router-dom";
 
 
 const SignUp = () => {
@@ -56,8 +57,14 @@ const SignUp = () => {
                     <HorizontalDivider />
 
                     <div class="container">
-                    <WhiteButton type="submit" value="Create Account">Create Account</WhiteButton>
+                        <WhiteButton type="submit">Create Account</WhiteButton>
                     </div>
+
+                    <Link to="/login" class="container" style={{marginTop: '4px'}}>
+                        <WhiteButton>
+                            Go Back
+                        </WhiteButton>
+                    </Link>
 
                 </VerticalFlexBox>
                 </fieldset>
