@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors, fontSizes } from "./Config";
 
 export const Input = styled.input`
-    font-family: 'Playfair Display', serif;
+    font-family: Arial, Helvetica, sans-serif;
     border: 2px solid ${colors.dark};
     color: ${colors.dark};
     margin: 1px 2px;
@@ -20,7 +20,7 @@ export const Input = styled.input`
 `
 
 export const LoginInput = styled.input`
-    font-family: 'Playfair Display', serif;
+    font-family: Arial, Helvetica, sans-serif;
     border: 1.3px solid ${colors.dark};
     border-radius: 5px;
     color: ${colors.dark};

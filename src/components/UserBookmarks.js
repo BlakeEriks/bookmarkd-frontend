@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useQuery, useQueryClient } from "react-query"
 import useBookmarks from "../services/bookmarks"
-import { VerticalFlexBox } from "../styles/Boxes"
+import { BookmarkList, VerticalFlexBox } from "../styles/Boxes"
 import Bookmark from "./Bookmark"
 import EditBookmark from "./EditBookmark"
 import SearchBar from "./SearchBar"
@@ -32,12 +32,12 @@ const UserBookmarks = () => {
     const nameExists = name => bookmarkQuery.data?.some(bookmark => bookmark.name === name)
 
     return (
-        <VerticalFlexBox width='60%'>
+        <VerticalFlexBox width='50%'>
             <SearchBar setFilter={setFilter} filter={filter}/>
-            <ul style={{width: '50%'}}>
-                {getFilteredBookmarks()?.map( bookmark => <Bookmark key={bookmark._id} {...bookmark} removeBookmark={removeBookmark} setForm={setFormData} />)}
-            </ul>
-            <EditBookmark  formData={formData} createBookmark={createBookmark} nameExists={nameExists}/>
+                <BookmarkList>
+                    {getFilteredBookmarks()?.map( bookmark => <Bookmark key={bookmark._id} {...bookmark} removeBookmark={removeBookmark} setForm={setFormData} />)}
+                </BookmarkList>
+            <EditBookmark formData={formData} createBookmark={createBookmark} nameExists={nameExists}/>
         </VerticalFlexBox>
     )
 }

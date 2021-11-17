@@ -5,9 +5,9 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 200px;
-    margin-top: 20px;
     color: ${colors.dark};
+    width: 100%;
+    margin-bottom: 40px;
 `
 
 export const HeaderTitle = styled.div`

@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { Navigate } from "react-router"
+import Footer from "../components/Footer"
 import Header from "../components/Header"
 import PublicBookmarks from "../components/PublicBookmarks"
 import UserBookmarks from "../components/UserBookmarks"
@@ -24,11 +25,12 @@ const Home = () => {
         !auth ? <Navigate to='/login' /> :
         <>
             <Header />
-            <HorizontalFlexBox>
+            <HorizontalFlexBox alignItems='flex-start' width='90%' justifyContent='space-between'>
                 <UserBookmarks />
-                <VerticalDivider height='200px'/>
+                {/* <VerticalDivider height='200px'/> */}
                 <PublicBookmarks />
             </HorizontalFlexBox>
+            <Footer />
         </>
     )
 }
