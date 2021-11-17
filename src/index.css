@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bookmark {
+  text-align: center;
+  color: rgb(35, 150, 96);
+  font-family: 'Poppins';
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
