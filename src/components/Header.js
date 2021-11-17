@@ -6,7 +6,7 @@ import { HeaderContainer, HeaderContent, HeaderTitle } from  '../styles/Header'
 const Header = () => {
 
     const userActions = useUserActions()
-    const [auth, setAuth] = useAuthState()
+    const [auth] = useAuthState()
 
     return (
         <HeaderContainer>

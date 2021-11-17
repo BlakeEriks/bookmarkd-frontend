@@ -1,6 +1,6 @@
 import { Check, Edit, Plus, Search, Times } from "@styled-icons/fa-solid";
 import styled from "styled-components";
-import { colors, fontSizes } from "./Config";
+import { colors } from "./Config";
 
 export const SearchIcon = styled(Search)`
     color: ${colors.dark};

@@ -1,7 +1,7 @@
 import { HorizontalFlexBox } from "../styles/Boxes"
 import { Button } from "../styles/Button"
 import { PlusIcon } from "../styles/Icons"
-import { LinkText, Text } from "../styles/Text"
+import { LinkText } from "../styles/Text"
 
 const BookmarkExplore = ({name, url, createBookmark}) => {
     return (
