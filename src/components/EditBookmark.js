@@ -26,8 +26,8 @@ const EditBookmark = ({formData, createBookmark, nameExists}) => {
         <form onSubmit={handleSubmit}>
             <HorizontalFlexBox>
                 <VerticalFlexBox>
-                    <Input onChange={onChange} value={form.name} name='name' placeholder='Website'/>
-                    <Input onChange={onChange} value={form.url} name='url' placeholder='Link' />
+                    <Input className="niceText" onChange={onChange} value={form.name} name='name' placeholder='Website'/>
+                    <Input className="niceText" onChange={onChange} value={form.url} name='url' placeholder='Link' />
                 </VerticalFlexBox>
                 <EditAddButton width='50px'>
                     { nameExists(form.name) ? <CheckIcon /> : <PlusIcon />}

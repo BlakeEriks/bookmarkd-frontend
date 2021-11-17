@@ -5,6 +5,7 @@ import BookmarkExplore from "./BookmarkExplore";
 import { SubTitle } from "../styles/Text";
 import { useQuery, useQueryClient } from "react-query";
 
+
 const PublicBookmarks = () => {
 
     const queryClient = useQueryClient()
@@ -18,18 +19,16 @@ const PublicBookmarks = () => {
                 queryClient.invalidateQueries()
             })
     }
-    
+
     return (
-        <main>
-            <VerticalFlexBox width='40%' alignItems='center'>
-                <SubTitle>
-                    Explore
-                </SubTitle>
-                {exploreQuery.data?.map( bookmark => 
-                    <BookmarkExplore key={bookmark._id} {...bookmark} createBookmark={createBookmark} />
-                )}
-            </VerticalFlexBox>
-        </main>
+        <VerticalFlexBox width='40%' alignItems='center'>
+            <SubTitle>
+                Explore
+            </SubTitle>
+            {exploreQuery.data?.map( bookmark => 
+                <BookmarkExplore key={bookmark._id} {...bookmark} createBookmark={createBookmark} />
+            )}
+        </VerticalFlexBox>
     )
 
 };

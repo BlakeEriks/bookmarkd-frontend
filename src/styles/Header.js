@@ -11,10 +11,13 @@ export const HeaderContainer = styled.div`
 `
 
 export const HeaderTitle = styled.div`
+    font-family: 'Playfair Display', serif;
     font-size: ${fontSizes.xLarge};
+    font-weight: bold;
 `
 
 export const HeaderContent = styled.div`
+    font-family: 'Playfair Display', serif;
     display: flex;
     justify-content: space-around;
     font-size: ${fontSizes.medium};
