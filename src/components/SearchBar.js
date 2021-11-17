@@ -1,11 +1,13 @@
+import { useState } from "react"
 import { SearchIcon } from "../styles/Icons"
 import { SearchContainer, SearchInput } from "../styles/Search"
 
-const SearchBar = () => {
+const SearchBar = ({filter, setFilter}) => {
+
     return (
         <SearchContainer>
             <SearchIcon />
-            <SearchInput placeholder='Search' />
+            <SearchInput placeholder='Search' value={filter} onChange={event => setFilter(event.target.value)}/>
         </SearchContainer>
     )
 }

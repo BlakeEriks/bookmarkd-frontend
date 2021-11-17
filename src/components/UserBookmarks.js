@@ -11,6 +11,7 @@ const UserBookmarks = () => {
     const bookmarkService = useBookmarks()
     const [bookmarks, setBookmarks] = useState([])
     const [formData, setFormData] = useState({name: '', url: ''})
+    const [filter, setFilter] = useState('')
 
     const getBookmarks = () => {
         bookmarkService.get().then(res => {
@@ -37,13 +38,17 @@ const UserBookmarks = () => {
             })
     }
 
+    const getFilteredBookmarks = () => {
+        return bookmarks.filter(bookmark => bookmark.name.toLowerCase().includes(filter.toLowerCase()))
+    }
+
     const nameExists = name => bookmarks.some(bookmark => bookmark.name === name)
 
     return (
         <VerticalFlexBox width='60%'>
-            <SearchBar />
+            <SearchBar setFilter={setFilter} filter={filter}/>
             <ul style={{width: '50%'}}>
-                {bookmarks.map( bookmark => <Bookmark key={bookmark._id} {...bookmark} removeBookmark={removeBookmark} setForm={setFormData} />)}
+                {getFilteredBookmarks().map( bookmark => <Bookmark key={bookmark._id} {...bookmark} removeBookmark={removeBookmark} setForm={setFormData} />)}
             </ul>
             <EditBookmark formData={formData} createBookmark={createBookmark} nameExists={nameExists}/>
         </VerticalFlexBox>
