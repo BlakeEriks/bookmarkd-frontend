@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { colors, fontSizes } from "./Config";
 
 export const Button = styled.button`
+    font-family: 'Playfair Display', serif;
     font-size: ${props => fontSizes[props.fontSize] || fontSizes.small};
     color: ${colors.light};
     background: ${colors.dark};
@@ -19,6 +20,7 @@ export const EditAddButton = styled(Button)`
 `
 
 export const WhiteButton = styled.button`
+    font-family: 'Playfair Display', serif;
     font-size: ${fontSizes.xsmall};
     color: ${colors.dark};
     background: white;

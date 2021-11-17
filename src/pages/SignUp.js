@@ -41,22 +41,22 @@ const SignUp = () => {
                 <VerticalFlexBox class="container">
 
                     <div class="container">
-                        <SubTitle className="niceText" font-weight="bold">Sign Up Here</SubTitle>
+                        <SubTitle font-weight="bold">Sign Up Here</SubTitle>
                     </div>
                     <HorizontalDivider />
 
                     <div class="container">
-                    <LoginInput className="niceText" type="text" name="username" value={form.username} placeholder="username" onChange={onChange} required />
+                    <LoginInput type="text" name="username" value={form.username} placeholder="username" onChange={onChange} required />
                     </div>
 
                     <div class="container">
-                    <LoginInput className="niceText" type="password" name="password" value={form.password} placeholder= "password" onChange={onChange} required />
+                    <LoginInput type="password" name="password" value={form.password} placeholder= "password" onChange={onChange} required />
                     </div>
 
                     <HorizontalDivider />
 
                     <div class="container">
-                    <WhiteButton className="niceText" type="submit" value="Create Account">Create Account</WhiteButton>
+                    <WhiteButton type="submit" value="Create Account">Create Account</WhiteButton>
                     </div>
 
                 </VerticalFlexBox>

@@ -7,7 +7,7 @@ const SearchBar = ({filter, setFilter}) => {
     return (
         <SearchContainer>
             <SearchIcon />
-            <SearchInput className="niceText" placeholder='Search' value={filter} onChange={event => setFilter(event.target.value)}/>
+            <SearchInput placeholder='Search'  />
         </SearchContainer>
     )
 }

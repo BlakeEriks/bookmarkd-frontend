@@ -40,29 +40,29 @@ const Login = () => {
                 <fieldset>
                 <VerticalFlexBox>
 
-                   <SubTitle className="niceText">bookmarkd</SubTitle>
+                   <SubTitle>bookmarkd</SubTitle>
 
                     <HorizontalDivider />
 
                     <div className="container">
-                        <LoginInput  className="niceText" type="text" name="username" value={form.username} onChange={onChange} placeholder="username" required></LoginInput>
+                        <LoginInput type="text" name="username" value={form.username} onChange={onChange} placeholder="username" required></LoginInput>
                     </div>
 
                     <div className="container">
-                        <LoginInput className="niceText" type="password" name="password" value={form.password} onChange={onChange} placeholder="password" required></LoginInput>
+                        <LoginInput type="password" name="password" value={form.password} onChange={onChange} placeholder="password" required></LoginInput>
                     </div>
 
                     <HorizontalDivider />
 
                     <div className="container">
-                        <WhiteButton className="niceText" type="submit" value="Login">Login</WhiteButton>
+                        <WhiteButton type="submit" value="Login">Login</WhiteButton>
                     </div>
 
                     <HorizontalDivider />
 
                     <div className="container">
                         <form action ="/signup">
-                            <WhiteButton className="niceText">Sign Up</WhiteButton>
+                            <WhiteButton>Sign Up</WhiteButton>
                         </form>
                     </div>
 

@@ -26,7 +26,7 @@ const PublicBookmarks = () => {
     return (
         <main>
             <VerticalFlexBox width='40%' alignItems='center'>
-                <SubTitle className="niceText">
+                <SubTitle>
                     Explore
                 </SubTitle>
                 {bookmarks.map( bookmark =>
