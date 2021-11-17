@@ -4,6 +4,7 @@ import useBookmarks from "../services/bookmarks";
 import BookmarkExplore from "./BookmarkExplore";
 import { SubTitle } from "../styles/Text";
 
+
 const PublicBookmarks = () => {
 
     const [bookmarks, setBookmarks] = useState([]);
@@ -21,16 +22,18 @@ const PublicBookmarks = () => {
         await bookmarkService.create(bookmark)
         getBookmarks()
     }
-    
+
     return (
         <main>
             <VerticalFlexBox width='40%' alignItems='center'>
                 <SubTitle>
                     Explore
                 </SubTitle>
-                {bookmarks.map( bookmark => 
+                <div className = "bookmark">
+                    {bookmarks.map( bookmark => 
                     <BookmarkExplore key={bookmark._id} {...bookmark} createBookmark={createBookmark} />
                 )}
+                </div>
             </VerticalFlexBox>
         </main>
     )
