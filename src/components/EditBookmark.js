@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { HorizontalFlexBox, HorizontalFlexBoxForm, VerticalFlexBox } from "../styles/Boxes"
+import { HorizontalFlexBox, VerticalFlexBox } from "../styles/Boxes"
 import { EditAddButton } from "../styles/Button"
 import { CheckIcon, PlusIcon } from "../styles/Icons"
 import { Input } from "../styles/Input"
