@@ -9,9 +9,9 @@ const useHttp = () => {
             const requestOptions = {
                 method,
                 headers: {
-                    'Content-Type': 'application/json'
-                },
-                credentials: "include"
+                    'Content-Type': 'application/json',
+                    'token': auth
+                }
             };
             if (body) {
                 requestOptions.body = JSON.stringify(body)
@@ -22,11 +22,11 @@ const useHttp = () => {
 
     const handleResponse = res => {
         return res.text().then(text => {
-
+            
             const data = text && JSON.parse(text)
 
             if (res.status !== 200) {
-                if ([401, 403].includes(res.status) && auth?.token) {
+                if ([401, 403].includes(res.status) && auth) {
                     // auto logout if 401 Unauthorized or 403 Forbidden response returned from api
                     setAuth(null);
                 }

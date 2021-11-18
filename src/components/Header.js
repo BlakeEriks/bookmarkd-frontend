@@ -1,12 +1,12 @@
 import useUserActions from '../services/userActions'
-import { useAuthState } from '../state/Auth'
+import { useUserState } from '../state/Auth'
 import { SignOutButton } from '../styles/Button'
 import { HeaderContainer, HeaderContent, HeaderTitle } from  '../styles/Header'
 
 const Header = () => {
 
     const userActions = useUserActions()
-    const [auth] = useAuthState()
+    const [user] = useUserState()
 
     return (
         <HeaderContainer>
@@ -14,7 +14,7 @@ const Header = () => {
                 bookmarkd
             </HeaderTitle>
             <HeaderContent className="niceText">
-                Hi {auth.username}!
+                Hi {user}!
                 <SignOutButton className="niceText" width='110px' onClick={userActions.logout}>
                     Sign Out
                 </SignOutButton>

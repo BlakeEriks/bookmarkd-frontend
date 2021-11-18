@@ -6,8 +6,10 @@ import { LinkText } from "../styles/Text"
 const Bookmark = ({_id, name, url, removeBookmark, setForm}) => {
     return (
         <HorizontalFlexBox style={{marginBottom: '3px'}} justifyContent='space-between'>
-            <LinkText href={'https://' + url} target='_blank'>
-                {name}
+            <LinkText>
+                <a href={'https://' + url} target='_blank'>
+                    {name}    
+                </a>
             </LinkText>
             <HorizontalFlexBox>
                 <Button width='30px' onClick={() => setForm({name, url})}>
