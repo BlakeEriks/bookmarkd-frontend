@@ -31,10 +31,10 @@ const useUserActions = () => {
     }
 
     const logout = () => {
-        http.get(`${API_BASE_URL}/logout`)
         localStorage.removeItem('token');
         localStorage.removeItem('username');
         setAuth(null)
+        setUser(null)
     }
 
     return {
